@@ -11,10 +11,29 @@
 |
 */
 
+
+Auth::routes(['verify' => true]);
+
+//BackOffice
+Route::group(['middleware'=>['auth'],'as', 'backoffice.'], function(){
+		//Route::get('role','RoleController@index')->name('role.index');
+	Route::resource('role','RoleController');
+
+
+});
+
+
+
+/*
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(['verify' => true]);
+Route::get('demo', function () {
+    return view('theme.backoffice.pages.demo');
+});
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
+*/

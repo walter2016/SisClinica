@@ -6,28 +6,34 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
-    protected $fillable = [
-    	'name','slug','description'
-    ];
+	protected $fillable = [
+		'name','description','slug'
+	];
 
 
 //Relaciones
 
-public function permissions()
-{
+	public function permissions()
+	{
 		return $this->hasMany('App\Permission');
-}
+	}
 
 
-public function users()
-{
+	public function users()
+	{
 		return $this->belongsToMany('App\User')->withTimestamps();
 
-}
+	}
 
 //Almacenamiento
 
-
+	public function store($request)
+	{
+		$slug = str_slug($request->name,'-');
+		return self::create($request->all()+[
+			'slug'=>$slug,
+		]);
+	}
 // Validación
 
 
