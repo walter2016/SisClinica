@@ -280,11 +280,11 @@
 }
 
 .pink.accent-2 {
-  background-color: #ff4081 !important;
+  background-color: #0096d2 !important;
 }
 
 .pink-text.text-accent-2 {
-  color: #ff4081 !important;
+  color: #0096d2 !important;
 }
 
 .pink.accent-3 {
@@ -3698,11 +3698,11 @@ li.home:before {
 }
 
 .pink.accent-2 {
-  background-color: #ff4081 !important;
+  background-color: #0096d2 !important;
 }
 
 .pink-text.text-accent-2 {
-  color: #ff4081 !important;
+  color: #0096d2 !important;
 }
 
 .pink.accent-3 {
@@ -6868,7 +6868,7 @@ ul.side-nav .collapsible-header.active:after {
   top: -1rem;
   left: 0rem;
   font-size: 0.8rem;
-  color: #FF4081;
+  color: #0096d2;
   -webkit-transform: translateY(0%);
   -ms-transform: translateY(0%);
   -o-transform: translateY(0%);

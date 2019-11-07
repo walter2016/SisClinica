@@ -6,6 +6,15 @@
 @section('head')
 @endsection
 
+@section('breadcrumbs')
+
+{{-- comentario --}}
+@endsection
+
+@section('dropdown_settings')
+@endsection
+
+
 @section('content') 
 	<p>Hola desde demo </p>
 
