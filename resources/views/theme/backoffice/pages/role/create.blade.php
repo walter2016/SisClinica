@@ -9,7 +9,7 @@
 @section('breadcrumbs')
 
 <li><a href="{{route('role.index')}}">Roles del Sistema</a></li>
-<li>Crear Rol/li>
+<li>Crear Rol</li>
 @endsection
 
 

@@ -1,7 +1,7 @@
  <div id="breadcrumbs-wrapper">
 
   <div class="header-search-wrapper grey lighten-2 hide-on-large-only">
-    <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+    <input type="text" name="Search" class="header-search-input z-depth-2" >
   </div>
   <div class="container">
     <div class="row">
@@ -15,7 +15,7 @@
       <div class="col s2 m6 l6">
         <a class="btn dropdown-settings waves-effect waves-light breadcrumbs-btn right" href="#!" data-activates="dropdown1">
           <i class="material-icons hide-on-med-and-up">settings</i>
-          <span class="hide-on-small-onl">Settings</span>
+          <span class="hide-on-small-onl">Acciones</span>
           <i class="material-icons right">arrow_drop_down</i>
         </a>
         <ul id="dropdown1" class="dropdown-content">

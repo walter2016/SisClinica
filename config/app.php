@@ -2,6 +2,11 @@
 
 return [
 
+    'admin_role' => env('ADMIN_ROLE','admin'),
+    'patient_role' => env('PATIENT_ROLE','paciente'),
+    'doctor_role' => env('DOCTOR_ROLE','medico'),
+    'secretary_role' => env('SECRETARY_ROLE','secretario'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -80,7 +85,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------

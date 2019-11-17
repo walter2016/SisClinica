@@ -27,7 +27,7 @@
             </li>
           </ul>
           <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown-nav">Walter<i class="mdi-navigation-arrow-drop-down right"></i></a>
-          <p class="user-roal">Administrator</p>
+          <p class="user-roal">Administrador</p>
         </div>
       </div>
     </li>
@@ -35,9 +35,15 @@
       <ul class="collapsible" data-collapsible="accordion">
         
         <li class="bold">
-          <a href="#" class="waves-effect waves-cyan">
+          <a href="{{route('admin.show')}}" class="waves-effect waves-cyan">
               <i class="material-icons">pie_chart_outlined</i>
               <span class="nav-text">Panel de Administración</span>
+            </a>
+        </li>
+        <li class="bold">
+          <a href="{{route('user.index')}}" class="waves-effect waves-cyan">
+              <i class="material-icons">people</i>
+              <span class="nav-text">Usuarios del Sistema</span>
             </a>
         </li>
          <li class="bold">
@@ -46,6 +52,13 @@
               <span class="nav-text">Roles del Sistema</span>
             </a>
         </li>
+        <li class="bold">
+          <a href="{{route('permission.index')}}" class="waves-effect waves-cyan">
+              <i class="material-icons">vpn_key</i>
+              <span class="nav-text">Permisos del Sistema</span>
+            </a>
+        </li>
+        
 
         
       </ul>

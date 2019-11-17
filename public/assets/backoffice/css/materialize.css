@@ -5315,13 +5315,13 @@ small {
 
 .btn:focus, .btn-large:focus,
 .btn-floating:focus {
-  background-color: #ff0d5f;
+  background-color: #0040FF;
 }
 
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #0096d2;
+  background-color: #2E2EFE;
   text-align: center;
   letter-spacing: .5px;
   transition: .2s ease-out;
