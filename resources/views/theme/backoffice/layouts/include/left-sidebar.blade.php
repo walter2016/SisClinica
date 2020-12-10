@@ -1,71 +1,55 @@
-<aside id="left-sidebar-nav">
+<aside id="left-sidebar-nav" >
   <ul id="slide-out" class="side-nav fixed leftside-navigation">
-    <li class="user-details cyan darken-2">
-      <div class="row">
-        <div class="col col s4 m4 l4">
-          <img src="/images/avatar/avatar-7.png" alt="" class="circle responsive-img valign profile-image cyan">
-        </div>
-        <div class="col col s8 m8 l8">
-          <ul id="profile-dropdown-nav" class="dropdown-content">
-            <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">face</i> Perfil</a>
-            </li>
-            <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">settings</i> Ajuste</a>
-            </li>
-            <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">live_help</i> Ayuda</a>
-            </li>
-            <li class="divider"></li>
-            
-            <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">keyboard_tab</i> Salir</a>
-            </li>
-          </ul>
-          <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown-nav">Walter<i class="mdi-navigation-arrow-drop-down right"></i></a>
-          <p class="user-roal">Administrador</p>
-        </div>
-      </div>
-    </li>
     <li class="no-padding">
       <ul class="collapsible" data-collapsible="accordion">
-        
         <li class="bold">
           <a href="{{route('admin.show')}}" class="waves-effect waves-cyan">
-              <i class="material-icons">pie_chart_outlined</i>
-              <span class="nav-text">Panel de Administración</span>
-            </a>
+            <i class="material-icons">pie_chart_outlined</i>
+            <span class="nav-text">Panel de Administración</span>
+          </a>
         </li>
         <li class="bold">
           <a href="{{route('user.index')}}" class="waves-effect waves-cyan">
-              <i class="material-icons">people</i>
-              <span class="nav-text">Usuarios del Sistema</span>
-            </a>
+            <i class="material-icons">people</i>
+            <span class="nav-text">Usuarios del Sistema</span>
+          </a>
         </li>
-         <li class="bold">
+        @if(user()->has_role(config('app.doctor_role')))
+        <li class="bold">
+          <a href="{{route('doctor.appointments.show', user()->id)}}" class="waves-effect waves-cyan">
+            <i class="material-icons">access_time</i>
+            <span class="nav-text">Mis Citas</span>
+          </a>
+        </li>
+        @else
+        <li class="bold">
+          <a href="{{route('patient.appointments.show')}}" class="waves-effect waves-cyan">
+            <i class="material-icons">access_time</i>
+            <span class="nav-text">Citas del Sistema</span>
+          </a>
+        </li>
+        @endif
+        <li class="bold">
           <a href="{{route('role.index')}}" class="waves-effect waves-cyan">
-              <i class="material-icons">perm_identity</i>
-              <span class="nav-text">Roles del Sistema</span>
-            </a>
+            <i class="material-icons">perm_identity</i>
+            <span class="nav-text">Roles del Sistema</span>
+          </a>
         </li>
         <li class="bold">
           <a href="{{route('permission.index')}}" class="waves-effect waves-cyan">
-              <i class="material-icons">vpn_key</i>
-              <span class="nav-text">Permisos del Sistema</span>
-            </a>
+            <i class="material-icons">vpn_key</i>
+            <span class="nav-text">Permisos del Sistema</span>
+          </a>
         </li>
-        
+        <li class="bold">
+          <a href="{{route('speciality.index')}}" class="waves-effect waves-cyan">
+            <i class="material-icons">local_hospital</i>
+            <span class="nav-text">Especialidades Medicas</span>
+          </a>
+        </li>
 
-        
       </ul>
     </li>
   </ul>
-  <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only">
-    <i class="material-icons">menu</i>
-  </a>
+
 </aside>
-  

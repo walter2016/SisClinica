@@ -25,7 +25,20 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+   // protected $redirectTo = '/home';
+
+
+     public function redirectPath()
+    {
+         if(user()->has_role(config('app.admin_role'))||user()->has_role(config('app.doctor_role'))||user()->has_role(config('app.secretary_role'))) {
+            return  '/admin';
+        }else
+        {
+            return  '/profile';
+        }
+
+        
+    }
 
     /**
      * Create a new controller instance.

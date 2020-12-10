@@ -1,13 +1,21 @@
 <!-- START FOOTER -->
-<footer class="page-footer gradient-45deg-light-blue-cyan">
+<footer class="center page-footer gradient-45deg-light-blue-cyan">
   <div class="footer-copyright">
     <div class="container">
-      <span>Copyright ©
-        <script type="text/javascript">
-          document.write(new Date().getFullYear());
-        </script>
+
+      <span>© 2019 Copyright - Sistema Clinico
+        
     </div>
   </div>
 </footer>
 <!-- END FOOTER -->
   
+
+  {{--
+
+	<script type="text/javascript">
+          document.write(new Date().getFullYear());
+        </script>
+
+
+  --}}

@@ -18,27 +18,10 @@
 				
 				<div class="card-content">
 					<span class="card-title">@yield('title')</span>
-					<table>
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>Especialista</th>
-								<th>Fecha</th>
-								<th>Hora</th>
-								<th>Estado</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Jorge</td>
-								<td>15 de Julio</td>
-								<td>15:00</td>
-								<td>Pendiente</td>
-							</tr>
-						</tbody>
-					</table>
-					
+
+					@include('theme.includes.user.patient.appointments',[
+						'update' => false
+						])
 				</div>
 			</div>
 			

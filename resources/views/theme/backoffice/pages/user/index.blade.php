@@ -4,6 +4,7 @@
 @section('title','Usuarios del sistema')
 
 @section('head')
+<link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/datatable/jquery.dataTables.css')}}">
 @endsection
 @section('breadcrumbs')
 
@@ -23,12 +24,13 @@
 			<div class="col s12 ">
 				<div class="card">
 					<div class="card-content">
-						<table>
+						<table id="my_table">
 							<thead>
 								<tr>
 									<th>Nombre</th>
 									<th>Edad</th>
 									<th>Correo</th>
+									<th>Roles</th>
 									<th>Acciones</th>
 								</tr>
 							</thead>
@@ -38,6 +40,9 @@
 									<td><a href="{{route('user.show', $user)}}">{{$user->name}}</a></td>
 									<td>{{$user->age()}}</td>
 									<td>{{$user->email}}</td>
+									<td>
+										{{$user->list_roles()}}
+									</td>
 									<td><a href="{{route('user.edit',$user)}}">Editar</a></td>
 								</tr>
 								@endforeach
@@ -53,4 +58,15 @@
 @endsection
 
 @section('foot')
+<script src='{{ asset('assets/plugins/datatable/jquery.dataTables.js')}}'></script>
+
+
+<script type="text/javascript">
+	$(document).ready( function () {
+    $('#my_table').DataTable();
+} );
+
+
+	
+</script>
 @endsection

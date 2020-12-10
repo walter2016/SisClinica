@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Role;
+use App\Speciality;
 
 use Illuminate\Support\Facades\Hash;
 
@@ -38,12 +39,12 @@ class UserController extends Controller
      */
     public function create()
     {
-       $this->authorize('create', User::class);
-        return view('theme.backoffice.pages.user.create',[
-            'roles' => auth()->user()->visible_roles(),
+     $this->authorize('create', User::class);
+     return view('theme.backoffice.pages.user.create',[
+        'roles' => auth()->user()->visible_roles(),
 
-        ]);
-    }
+    ]);
+ }
 
     /**
      * Store a newly created resource in storage.
@@ -53,9 +54,9 @@ class UserController extends Controller
      */
     public function store(StoreRequest $request, User $user)
     {
-       $user = $user->store($request);
-       return redirect()->route('user.show', $user);
-   }
+     $user = $user->store($request);
+     return redirect()->route('user.show', $user);
+ }
 
     /**
      * Display the specified resource.
@@ -163,6 +164,28 @@ class UserController extends Controller
         return redirect()->route('user.show', $user);
     }
 
+    /*
+    * mostrar formulario para asignar especialidades
+    
+    */
+
+    public function assign_speciality(User $user)
+    {
+        return view('theme.backoffice.pages.user.assign_speciality',[
+            'user' => $user,
+            'specialities' => Speciality::all()
+        ]);
+    }
+
+    public function speciality_assignment(Request $request, User $user)
+    {
+        //$this->authorize('assign_permission', $user);
+        $user->specialities()->sync($request->specialities);
+        alert('Éxito', 'Especialidades Sincronizadas', 'success');
+        return redirect()->route('user.show', $user);
+    }
+
+
 
     public function profile()
     {
@@ -173,20 +196,20 @@ class UserController extends Controller
         ]);
     }
 
-public function edit_password()
+    public function edit_password()
 
-{
-  $this->authorize('update_password', auth()->user());
-  return view('theme.frontoffice.pages.user.edit_password');
-}
+    {
+      $this->authorize('update_password', auth()->user());
+      return view('theme.frontoffice.pages.user.edit_password');
+  }
 
-public function change_password(ChangePasswordRequest $request)
-{
-  $request->user()->password =Hash::make($request->password);
-  $request->user()->save();
-  alert('Éxito', 'Contraseña Actualizada', 'success');
-  return redirect()->back();
-}
+  public function change_password(ChangePasswordRequest $request)
+  {
+      $request->user()->password =Hash::make($request->password);
+      $request->user()->save();
+      alert('Éxito', 'Contraseña Actualizada', 'success');
+      return redirect()->back();
+  }
 
 
 }

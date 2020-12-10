@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -18,6 +19,7 @@ class LoginController extends Controller
     |
     */
 
+
     use AuthenticatesUsers;
 
     /**
@@ -25,13 +27,26 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
-
+    //protected $redirectTo = '/admin';
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+
+
+     public function redirectPath()
+    {
+         if(user()->has_role(config('app.admin_role'))||user()->has_role(config('app.doctor_role'))||user()->has_role(config('app.secretary_role'))) {
+            return  '/admin';
+        }else
+        {
+            return  '/profile';
+        }
+
+        
+    }
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

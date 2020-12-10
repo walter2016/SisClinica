@@ -4,6 +4,7 @@
 
 
 @section('head')
+<link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/datatable/jquery.dataTables.css')}}">
 @endsection()
 
 @section('nav')
@@ -18,51 +19,25 @@
 				
 				<div class="card-content">
 					<span class="card-title">@yield('title')</span>
-					<table>
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>Concepto</th>
-								<th>Monto</th>
-								<th>Estado</th>
-								<th>Accion</th>
-								
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Consulta con Dr Jorge</td>
-								<th>$10</th>
-								<th>Pendeinte</th>
-								<td><a href="#modal" data-prescription="1" class="modal-trigger">Ver</a></td>
-							</tr>
-						</tbody>
-					</table>
+					
+					@include('theme.includes.user.patient.invoice_table')
 				</div>
 			</div>
 			
 		</div>
 
 	</div>
-	<div class="modal" id="modal">
-		<div class="modal-content">
-			<h4>Titulo</h4>
-			<p>Hola Mundo</p>
-		</div>
-		<div class="modal-footer">
-			<a href="#!" class="modal-close waves-effect btn-flat">Cerrar</a>
-			<a href="#!" class="waves-effect btn-flat">Imprimir</a>
-		</div>
-	</div>
+
+
+
+	@include('theme.includes.user.patient.invoice_modal')
+
 
 </div>
 @endsection()
 
 
 @section('foot')
-<script type="text/javascript">
-	$('.modal').modal();
+@include('theme.includes.user.patient.invoice_foot')
 
-</script>
 @endsection()

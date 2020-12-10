@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+   // protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -38,6 +38,18 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+     public function redirectPath()
+    {
+         if(user()->has_role(config('app.admin_role'))||user()->has_role(config('app.doctor_role'))||user()->has_role(config('app.secretary_role'))) {
+            return  '/admin';
+        }else
+        {
+            return  '/profile';
+        }
+
+        
     }
 
     /**
@@ -52,6 +64,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'dob' => ['required'],
         ]);
     }
 
@@ -67,6 +80,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'dob' =>$data['dob'],
         ]);
 
         $patient =config('app.patient_role');

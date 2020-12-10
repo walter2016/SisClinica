@@ -4,6 +4,7 @@
 @section('title','Roles del sistema')
 
 @section('head')
+<link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/datatable/jquery.dataTables.css')}}">
 @endsection
 @section('breadcrumbs')
 
@@ -23,7 +24,7 @@
 			<div class="col s12 ">
 				<div class="card">
 					<div class="card-content">
-						<table>
+						<table id="my_table">
 							<thead>
 								<tr>
 									<th>Nombre</th>
@@ -53,4 +54,15 @@
 @endsection
 
 @section('foot')
+<script src='{{ asset('assets/plugins/datatable/jquery.dataTables.js')}}'></script>
+
+
+<script type="text/javascript">
+	$(document).ready( function () {
+    $('#my_table').DataTable();
+} );
+
+
+	
+</script>
 @endsection

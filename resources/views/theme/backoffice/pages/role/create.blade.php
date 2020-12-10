@@ -50,12 +50,13 @@
 										</span>
 										@endif
 									</div>
-									<div class="row">
-										<div class="input-field col s12">
-											<button class="btn waves-effect waves-light right" type="submit" name="action">Guardar
-												<i class="material-icons right">send</i>
-											</button>
-										</div>
+									
+								</div>
+								<div class="row">
+									<div class="input-field col s12">
+										<button class="btn waves-effect waves-light right" type="submit" name="action">Guardar
+											<i class="material-icons right">send</i>
+										</button>
 									</div>
 								</div>
 							</form>

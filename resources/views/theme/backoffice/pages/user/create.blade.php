@@ -59,8 +59,10 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="input-field col s12">
+									<div class=" col s12">
+										<label for="dob">Fecha de Nacimiento</label>
 										<input id="dob" type="date" name="dob">
+
 										@if ($errors->has('dob'))
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $errors->first('dob') }}</strong>
